@@ -11,5 +11,7 @@ public class Cart : ScriptableObject
     public bool needUpdateCartsVariant2 = false;
     public List<Cart> nextCartsVariant1;
     public List<Cart> nextCartsVariant2;
+    public string nickname = "Событие";
     public Sprite ava;
+    public bool isShowOnce = false;
 }
