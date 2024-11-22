@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0a458e95e61388b4abbcf7b6876efca1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - HarryPotterKudos
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c7fd59f0d36a02d41bae6238f7f2ec23, type: 3}
+  - {fileID: 12800000, guid: fc7b9a033253a954b96fb6c8b9b3b714, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
