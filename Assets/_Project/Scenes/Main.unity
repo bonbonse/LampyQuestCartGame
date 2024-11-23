@@ -323,6 +323,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1256902619}
+    - target: {fileID: 5623764786894666231, guid: d60b96937ea69d841bb195bd5aaafe7e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623764786894666231, guid: d60b96937ea69d841bb195bd5aaafe7e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623764786894666231, guid: d60b96937ea69d841bb195bd5aaafe7e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8538665020865075943, guid: d60b96937ea69d841bb195bd5aaafe7e, type: 3}
       propertyPath: m_Name
       value: Game

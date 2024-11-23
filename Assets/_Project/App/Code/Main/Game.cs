@@ -27,6 +27,7 @@ public class Game : MonoBehaviour
     {
         instance = this;
         speedText = slowSpeedText;
+        AnswerButton.isDisabled = false;
 
         allPossibleNextCarts = defaultNextCarts;
         ClonePossibleCarts(allPossibleNextCarts);
