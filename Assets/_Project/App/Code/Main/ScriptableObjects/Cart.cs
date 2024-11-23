@@ -14,4 +14,5 @@ public class Cart : ScriptableObject
     public string nickname = "Событие";
     public Sprite ava;
     public bool isShowOnce = false;
+    public Attribute attribute = null;
 }
