@@ -21,5 +21,8 @@ MonoBehaviour:
   answerVariant2: "\u041D\u0435\u0442"
   needUpdateCartsVariant2: 0
   nextCartsVariant1: []
-  nextCartsVariant2: []
+  nextCartsVariant2:
+  - {fileID: 11400000, guid: a5a2c01d24a3b9041a21ac890e24d9bd, type: 2}
+  nickname: "\u0422\u0430\u0432\u0435\u0440\u043D\u0449\u0438\u043A"
   ava: {fileID: 0}
+  isShowOnce: 0

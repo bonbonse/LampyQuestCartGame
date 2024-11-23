@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8360735fab691cc44a8ffa1e2dbf38fa, type: 3}
+  m_Name: Palace 1
+  m_EditorClassIdentifier: 
+  question: "\u0412\u044B \u0432\u0445\u043E\u0434\u0438\u0442\u0435 \u0432 \u0411\u0430\u0448\u043D\u044E.
+    \u0412\u043D\u0443\u0442\u0440\u0438 \u043E\u043D\u0430 \u043D\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u0435\u0442
+    \u0431\u043E\u0433\u0430\u0442\u044B\u0439 \u0434\u0432\u043E\u0440\u0435\u0446."
+  answerVariant1: "\u0412\u0430\u0443"
+  needUpdateCartsVariant1: 0
+  answerVariant2: "\u0418\u0441\u043A\u0430\u0442\u044C \u043F\u043E\u043A\u043E\u0438
+    \u043F\u0440\u0438\u043D\u0446\u0435\u0441\u0441\u044B"
+  needUpdateCartsVariant2: 0
+  nextCartsVariant1:
+  - {fileID: 11400000, guid: 32efa0710695681478ddb46c2e28b502, type: 2}
+  - {fileID: 11400000, guid: 421f916769c6f0a49ba703c62a23eeb2, type: 2}
+  - {fileID: 11400000, guid: 76184113f36b7a7409c44ec76f442444, type: 2}
+  - {fileID: 11400000, guid: 58b2e457aeaab144aa34baf3b95b370e, type: 2}
+  nextCartsVariant2:
+  - {fileID: 11400000, guid: 32efa0710695681478ddb46c2e28b502, type: 2}
+  - {fileID: 11400000, guid: 421f916769c6f0a49ba703c62a23eeb2, type: 2}
+  - {fileID: 11400000, guid: 76184113f36b7a7409c44ec76f442444, type: 2}
+  - {fileID: 11400000, guid: 58b2e457aeaab144aa34baf3b95b370e, type: 2}
+  nickname: "\u0421\u043E\u0431\u044B\u0442\u0438\u0435"
+  ava: {fileID: 0}
+  isShowOnce: 0
