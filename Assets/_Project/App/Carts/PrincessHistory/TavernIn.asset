@@ -23,8 +23,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9fb028dd2f7e418479ff5ebd42578782, type: 2}
   - {fileID: 11400000, guid: 1e89390b95f19e54ab5882d2686a50d8, type: 2}
   - {fileID: 11400000, guid: d1c517f0116faec46941e566af0fa599, type: 2}
+  - {fileID: 11400000, guid: 499481e8919b0864491bb4473cfd75f4, type: 2}
   nextCartsVariant2: []
   nickname: "\u0421\u043E\u0431\u044B\u0442\u0438\u0435"
   ava: {fileID: 0}
   isShowOnce: 0
+<<<<<<< HEAD
   attribute: {fileID: 0}
+=======
+>>>>>>> master
