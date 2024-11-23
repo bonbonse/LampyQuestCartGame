@@ -1,15 +1,22 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
     public static Game instance;
 
+    public static float speedText = 1;
+    public float fastSpeedText = 0.05f;
+    public float slowSpeedText = 0.1f;
+
     [SerializeField]
     private Cart currentCart;
     [SerializeField]
     private List<Cart> defaultNextCarts = new List<Cart>();
+    // уникальные карты, которые уже были
+    private List<Cart> usedUniqueCarts = new List<Cart>();
 
     // возможные следующие карты
     private List<Cart> possibleNextCarts = new List<Cart>();
@@ -19,11 +26,34 @@ public class Game : MonoBehaviour
     private void Start()
     {
         instance = this;
+        speedText = slowSpeedText;
+        AnswerButton.isDisabled = false;
 
         allPossibleNextCarts = defaultNextCarts;
         ClonePossibleCarts(allPossibleNextCarts);
         UI.instance.Init();
         UI.instance.UpdateUI(currentCart);
+    }
+
+    public void Answer(AnswerVariants selectedVariant)
+    {
+        Attribute attribute = currentCart.attribute;
+        if (attribute != null)
+        {
+            int changeValue = GetEffectValue(selectedVariant, attribute);
+            EffectManager.instance.ChangeHeroism(changeValue);
+            Debug.Log(EffectManager.instance.GetHeroism());
+            if (attribute.Dead)
+            {
+                SceneManager.LoadScene("Menu");
+            }
+        }
+        NextCart(selectedVariant);
+    }
+
+    private int GetEffectValue(AnswerVariants selectedVariant, Attribute attribute)
+    {
+        return selectedVariant == AnswerVariants.Variant1 ? attribute.changeHeroismAnswer1 : attribute.changeHeroismAnswer2;
     }
 
     /*
@@ -32,7 +62,8 @@ public class Game : MonoBehaviour
          * ≈сли их там много - Random
          * ≈сли там ни одной - берЄм из possible
          * ≈сли в possible ни одной - заполн€ем possible allCarts и берЄм ещЄ раз
-         * ≈сли в allCarts ни одной - 
+         * 
+         * в possibleCarts не должны быть все карты уникальными. Ќеуникальные карты не должны быть тупиковыми
          * 
     */
     public void NextCart(AnswerVariants selectedVariant)
@@ -51,7 +82,7 @@ public class Game : MonoBehaviour
         }
         else
         {
-
+            // карты выбираютс€ из possible набора
             if (hasUpdateAllCarts)
             {
                 // обновл€ем все карты - ничего не удал€ем
@@ -66,7 +97,6 @@ public class Game : MonoBehaviour
         }
         currentCart = nextCart;
         UI.instance.UpdateUI(currentCart);
-        Debug.Log(possibleNextCarts.Count);
     }
 
     private bool HasUpdateAllCarts(AnswerVariants selectedVariant)
@@ -96,6 +126,10 @@ public class Game : MonoBehaviour
             result = carts[0];
         }
         int randomCartNumber = Random.Range(0, carts.Count);
+        if (carts[randomCartNumber].isShowOnce)
+        {
+            usedUniqueCarts.Add(carts[randomCartNumber]);
+        }
         return carts[randomCartNumber];
     }
     private void DropThisCartFromPossibleCartList()
@@ -133,8 +167,36 @@ public class Game : MonoBehaviour
         possibleNextCarts.Clear();
         for (int i = 0; i < carts.Count; i++)
         {
+            if (carts[i].isShowOnce)
+            {
+                if (!MeetingUniquaCartFirstTime(carts[i])){
+                    // встречаетс€ не в первый раз уникальна€ карта
+                    continue;
+                }
+            }
             possibleNextCarts.Add(carts[i]);
         }
     }
+    // провер€ет, была ли уникальна€ карта использована
+    private bool MeetingUniquaCartFirstTime(Cart cart)
+    {
+        if (usedUniqueCarts.Find(c => c.question == cart.question))
+        {
+            // впервые
+            return false;
+        }
+        return true;
+    }
 
+    public void UpdateSpeedText(bool isSpeedUp)
+    {
+        if (isSpeedUp)
+        {
+            speedText = fastSpeedText;
+        }
+        else
+        {
+            speedText = slowSpeedText;
+        }
+    }
 }

@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
     public TMP_Text ButtonVariantText1, ButtonVariantText2;
     public Image ava;
     public TMP_Text question;
+    public TMP_Text nickname;
 
     public Animator buttonTurnArroundBtn1;
     public Animator buttonTurnArroundBtn2;
@@ -47,7 +48,7 @@ public class UI : MonoBehaviour
     IEnumerator PrintQuestionText(string text, int lenght, int i = 0)
     {
         AnswerButton.isDisabled = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(Game.speedText);
         question.text += text[i++];
         if (i < lenght)
         {
@@ -55,6 +56,7 @@ public class UI : MonoBehaviour
         }
         else
         {
+            Game.instance.UpdateSpeedText(false);
             AnswerButton.isDisabled = false;
         }
     }

@@ -12,7 +12,11 @@ public class AnswerButton : MonoBehaviour
     {
         if (!isDisabled)
         {
-            Game.instance.NextCart(variant);
+            Game.instance.Answer(variant);
+        }
+        else
+        {
+            Game.instance.UpdateSpeedText(true);
         }
     }
 }

@@ -22,4 +22,6 @@ MonoBehaviour:
   nextCartsVariant1: []
   nextCartsVariant2:
   - {fileID: 11400000, guid: 045c54c6c8c980a4082dc2fae830e604, type: 2}
+  nickname: "\u0441\u043E\u0431\u044B\u0442\u0438\u0435"
   ava: {fileID: 0}
+  isShowOnce: 1

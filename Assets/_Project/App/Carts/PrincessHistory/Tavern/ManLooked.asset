@@ -23,4 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a19b161858e3ed04ba0036a307823c24, type: 2}
   nextCartsVariant2:
   - {fileID: 11400000, guid: 2d79d9e18bd1c134daf370ae75317066, type: 2}
+  nickname: "\u0441\u043E\u0431\u044B\u0442\u0438\u0435"
   ava: {fileID: 0}
+  isShowOnce: 1
